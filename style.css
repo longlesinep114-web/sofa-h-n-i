@@ -1478,20 +1478,24 @@ button, input, select, textarea {
   text-transform: uppercase;
 }
 
-/* STICKY BOTTOM ACTION BAR TRÊN DI ĐỘNG (CHUẨN TOP 0.1% CRO) */
+/* STICKY BOTTOM ACTION BAR TRÊN DI ĐỘNG (THIẾT KẾ NỔI - FLOATING PILLS CHUẨN HIỆN ĐẠI) */
 .mobile-sticky-bar {
   display: none;
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 56px;
-  background: #ffffff;
-  border-top: 1px solid #e1e2e6;
-  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.15);
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  height: 52px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-radius: 35px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.22);
   z-index: 9999;
-  grid-template-columns: 1fr 1.3fr 1.1fr;
-  align-items: stretch;
+  grid-template-columns: 1fr 1.35fr 1.15fr;
+  align-items: center;
+  padding: 4px;
+  gap: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 .sticky-bar-btn {
@@ -1499,30 +1503,40 @@ button, input, select, textarea {
   align-items: center;
   justify-content: center;
   gap: 6px;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 800;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.3px;
-  transition: opacity 0.2s;
+  height: 100%;
+  border-radius: 25px;
+  transition: all 0.2s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
 }
 
 .sticky-bar-btn:active {
-  opacity: 0.85;
+  transform: scale(0.96);
+  opacity: 0.9;
 }
 
 .sticky-call {
-  background: #e74c3c;
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
   color: #ffffff;
+  animation: callFloatPulse 2s infinite;
+}
+
+@keyframes callFloatPulse {
+  0%, 100% { box-shadow: 0 3px 8px rgba(231, 76, 60, 0.3); }
+  50% { box-shadow: 0 4px 14px rgba(231, 76, 60, 0.6); }
 }
 
 .sticky-zalo {
-  background: #0088ff;
+  background: linear-gradient(135deg, #0088ff, #0066cc);
   color: #ffffff;
 }
 
 .sticky-custom {
-  background: #2d3436;
+  background: linear-gradient(135deg, #2d3436, #1e272e);
   color: #ffffff;
 }
 
@@ -1536,6 +1550,6 @@ button, input, select, textarea {
   }
   
   body {
-    padding-bottom: 56px;
+    padding-bottom: 75px;
   }
 }
